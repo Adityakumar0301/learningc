@@ -1,45 +1,33 @@
-#include <stdio.h>
+#include<stdio.h>
+int main(){
 
-int main() {
-    int n, target;
-    int nums[100];
-    int found = 0;
+    int m,n;
+    
+    printf("enter the value of m and n:\n");
+    scanf("%d %d",&m,&n);
 
-    printf("Enter array size: ");
-    scanf("%d", &n);
+    int arr[m][n];
 
-    if (n < 2 || n > 100) {
-        printf("Invalid array size\n");
-        return 0;
-    }
-
-    printf("Enter array elements:\n");
-
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &nums[i]);
-    }
-
-    printf("Enter target: ");
-    scanf("%d", &target);
-
-    for (int i = 0; i < n; i++) {
-        for (int j = i + 1; j < n; j++) {
-
-            if (nums[i] + nums[j] == target) {
-                printf("Indices: [%d, %d]\n", i, j);
-                found = 1;
-                break;
-            }
+   
+    for(int i=0;i<m;i++){
+        for (int j = 0; j < n; j++)
+        {
+            scanf("%d",&arr[i][j]);
         }
+        printf("\n");
+    }
 
-        if (found) {
-            break;
+
+
+    for(int i=0;i<m;i++){
+        for (int j = 0; j < n; j++)
+        {
+            printf("%d  ",arr[i][j]);
         }
+        printf("\n");
     }
 
-    if (!found) {
-        printf("No solution found\n");
-    }
+
 
     return 0;
 }
